@@ -19,7 +19,7 @@ module TokenValidator
           user = User.new(
             email: params[:email],
             name: params[:name],
-            token: Token.generate_token
+            token: Token.generate_unique_token
           )
           if user.save
             present user, with: TokenValidator::Entities::User
