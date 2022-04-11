@@ -1,8 +1,6 @@
 module TokenValidator
   module V1
     class Users < Grape::API
-      require "luhn"
-
       version 'v1', using: :path
       format :json
       prefix :api
