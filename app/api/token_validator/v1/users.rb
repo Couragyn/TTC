@@ -33,7 +33,7 @@ module TokenValidator
           requires :email, allow_blank: false, regexp: /.+@.+/
         end
 
-        get '/:email', requirements: { url: /[\s\S]*/ } do
+        get '/:email', requirements: { email: /[\s\S]*/ } do
           user = User.find_by(email: params[:email])
 
           if user
