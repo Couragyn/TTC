@@ -1,6 +1,8 @@
 # TTC Validator
 
-TTC Validator is an API for generating and assigning 10 digit tokens based on the Luhn Algorithm
+TTC Validator is an API for generating and assigning 10 digit tokens based on the Luhn Algorithm.
+
+It is built with Rails and Grape API
 
 ## Routes
 GET  |  https://ttc-tokens.herokuapp.com/api/v1/users                       |  v1  |  Return list of users                     
