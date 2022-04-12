@@ -17,7 +17,8 @@ module TokenValidator
           user = User.new(
             email: params[:email],
             name: params[:name],
-            token: Token.generate_unique_token
+            token: Token.generate_unique_token.to_s,
+            expiry: Date.current + 60.days
           )
           if user.save
             present user, with: TokenValidator::Entities::User
@@ -30,7 +31,6 @@ module TokenValidator
         params do
           requires :email, allow_blank: false, regexp: /.+@.+/
         end
-
         get '/:email', requirements: { email: /[\s\S]*/ } do
           user = User.find_by(email: params[:email])
 

@@ -4,6 +4,7 @@ module TokenValidator
       expose :email
       expose :name
       expose :token
+      expose :expiry
     end
   end
 end
