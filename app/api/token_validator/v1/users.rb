@@ -31,7 +31,6 @@ module TokenValidator
         params do
           requires :email, allow_blank: false, regexp: /.+@.+/
         end
-
         get '/:email', requirements: { email: /[\s\S]*/ } do
           user = User.find_by(email: params[:email])
 

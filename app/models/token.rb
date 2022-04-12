@@ -8,9 +8,8 @@ class Token < ApplicationRecord
       if (token[0].to_s != "9") || User.find_by(token: token)
         token = Luhn.generate(10)
       else
-        unique = true
+        return token
       end
-      return token
     end
   end
 

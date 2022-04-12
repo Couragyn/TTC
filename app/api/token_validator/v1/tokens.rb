@@ -23,6 +23,21 @@ module TokenValidator
         get do
           tokens = User.pluck(:token)
         end
+
+        desc 'Validates if a token is assined to a user'
+        params do
+          requires :email, allow_blank: false, regexp: /.+@.+/
+          requires :token, allow_blank: false, type: Integer, regexp: /[9]+\d{9}$/
+        end
+        get '/:token/email/:email', requirements: { email: /[\s\S]*/ } do
+          user = User.find_by(email: params[:email])
+
+          if !user.present? || (user.token.to_i != params[:token])
+            status 404
+          else
+            status 200
+          end
+        end
       end
     end
   end
