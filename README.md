@@ -12,6 +12,7 @@ GET  |  https://ttc-tokens.herokuapp.com/api/v1/tokens/:token/email/:email(.json
 
 ## Helpful Links
 [Trello (can provide access)](https://trello.com/b/GJ2smytj/ttc)
+
 [Postman route collection](https://file.io/RaxUIPVwca7y)
 
 ## Stretch Goals
