@@ -17,7 +17,8 @@ module TokenValidator
           user = User.new(
             email: params[:email],
             name: params[:name],
-            token: Token.generate_unique_token
+            token: Token.generate_unique_token,
+            expiry: Date.current + 60.days
           )
           if user.save
             present user, with: TokenValidator::Entities::User
