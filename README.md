@@ -6,10 +6,10 @@ It is built with Rails and Grape API
 
 ## Routes
 GET  |  https://ttc-tokens.herokuapp.com/api/v1/users                       |  v1  |  Return list of users                     
-POST  |  https://ttc-tokens.herokuapp.com/api/v1/users                     |  v1  |  Add a user                               
-GET  |  https://ttc-tokens.herokuapp.com/api/v1/users/:email               |  v1  |  Return a user                            
-GET  |  https://ttc-tokens.herokuapp.com/api/v1/tokens/:token              |  v1  |  Validates a token                        
-GET  |  https://ttc-tokens.herokuapp.com/api/v1/tokens                     |  v1  |  Return all tokens                        
+POST  |  https://ttc-tokens.herokuapp.com/api/v1/users {email: $, name: $}  |  v1  |  Add a user                               
+GET  |  https://ttc-tokens.herokuapp.com/api/v1/users/:email                |  v1  |  Return a user                            
+GET  |  https://ttc-tokens.herokuapp.com/api/v1/tokens/:token               |  v1  |  Validates a token                        
+GET  |  https://ttc-tokens.herokuapp.com/api/v1/tokens                      |  v1  |  Return all tokens                        
 GET  |  https://ttc-tokens.herokuapp.com/api/v1/tokens/:token/email/:email  |  v1  |  Validates if a token is assined to a user
 
 ## Helpful Links
