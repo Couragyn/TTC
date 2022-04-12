@@ -17,7 +17,7 @@ module TokenValidator
           user = User.new(
             email: params[:email],
             name: params[:name],
-            token: Token.generate_unique_token,
+            token: Token.generate_unique_token.to_s,
             expiry: Date.current + 60.days
           )
           if user.save
